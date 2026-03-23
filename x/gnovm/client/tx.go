@@ -15,7 +15,7 @@ import (
 	"github.com/gnolang/gno/gnovm/pkg/gnolang"
 	"github.com/gnolang/gno/gnovm/pkg/gnomod"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 const (

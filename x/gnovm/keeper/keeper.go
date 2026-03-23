@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/runtime"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/gnolang/gno/gno.land/pkg/sdk/vm"

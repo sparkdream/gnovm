@@ -12,7 +12,7 @@ import (
 	"github.com/gnolang/gno/tm2/pkg/sdk/params"
 	"github.com/gnolang/gno/tm2/pkg/std"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 var _ vm.AccountKeeperI = (*vmAuthKeeper)(nil)

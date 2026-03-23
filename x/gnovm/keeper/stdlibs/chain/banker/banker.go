@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 	"github.com/gnolang/gno/tm2/pkg/crypto"
 	"github.com/gnolang/gno/tm2/pkg/std"
 )

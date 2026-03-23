@@ -3,7 +3,7 @@ package gnovm
 import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 // AutoCLIOptions implements the autocli.HasAutoCLIConfig interface.

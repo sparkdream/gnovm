@@ -4,7 +4,7 @@ import (
 	"time"
 
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 )
 
 func X_now(m *gno.Machine) (sec int64, nsec int32, mono int64) {

@@ -2,7 +2,7 @@ package runtime
 
 import (
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 )
 
 func AssertOriginCall(m *gno.Machine) {

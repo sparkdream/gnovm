@@ -26,8 +26,8 @@ import (
 	_ "github.com/cosmos/cosmos-sdk/x/staking" // import for side-effects
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	_ "github.com/ignite/gnovm/x/gnovm/module"
-	gnovmmoduletypes "github.com/ignite/gnovm/x/gnovm/types"
+	_ "github.com/sparkdream/gnovm/x/gnovm/module"
+	gnovmmoduletypes "github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 var (

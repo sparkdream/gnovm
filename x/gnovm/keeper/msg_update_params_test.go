@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 func TestMsgUpdateParams(t *testing.T) {

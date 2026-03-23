@@ -7,8 +7,8 @@ import (
 	clienthelpers "cosmossdk.io/client/v2/helpers"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/ignite/gnovm/app"
-	"github.com/ignite/gnovm/cmd/gnovmd/cmd"
+	"github.com/sparkdream/gnovm/app"
+	"github.com/sparkdream/gnovm/cmd/gnovmd/cmd"
 )
 
 func main() {

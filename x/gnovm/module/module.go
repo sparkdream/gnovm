@@ -15,9 +15,9 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 
-	gnovmclient "github.com/ignite/gnovm/x/gnovm/client"
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	gnovmclient "github.com/sparkdream/gnovm/x/gnovm/client"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 var (

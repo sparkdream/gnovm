@@ -10,8 +10,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

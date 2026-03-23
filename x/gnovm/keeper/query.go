@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 var _ types.QueryServer = (*queryServer)(nil)

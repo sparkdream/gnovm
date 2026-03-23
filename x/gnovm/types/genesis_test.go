@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 	"github.com/stretchr/testify/require"
 )
 

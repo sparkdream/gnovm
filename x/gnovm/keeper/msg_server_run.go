@@ -10,7 +10,7 @@ import (
 	"github.com/gnolang/gno/gno.land/pkg/sdk/vm"
 	"github.com/gnolang/gno/tm2/pkg/std"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 func (k msgServer) Run(ctx context.Context, msg *types.MsgRun) (*types.MsgRunResponse, error) {

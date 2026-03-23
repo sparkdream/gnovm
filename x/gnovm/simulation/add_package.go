@@ -10,8 +10,8 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/gnolang/gno/tm2/pkg/std"
 
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 func SimulateMsgAddPackage(

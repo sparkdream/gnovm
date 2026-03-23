@@ -4,7 +4,7 @@ package stdlibs
 
 import (
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 )
 
 // These types are aliases to the equivalent types in internal/execctx.

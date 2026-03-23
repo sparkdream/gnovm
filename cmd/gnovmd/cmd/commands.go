@@ -24,7 +24,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/ignite/gnovm/app"
+	"github.com/sparkdream/gnovm/app"
 )
 
 func initRootCmd(

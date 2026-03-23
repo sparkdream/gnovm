@@ -17,9 +17,9 @@ import (
 	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	module "github.com/ignite/gnovm/x/gnovm/module"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	module "github.com/sparkdream/gnovm/x/gnovm/module"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 type fixture struct {

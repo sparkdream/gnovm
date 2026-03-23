@@ -32,9 +32,9 @@ import (
 	"github.com/gnolang/gno/gnovm/pkg/gnolang"
 	"github.com/gnolang/gno/gnovm/pkg/gnomod"
 
-	gnovmkeeper "github.com/ignite/gnovm/x/gnovm/keeper"
-	gnovmmodule "github.com/ignite/gnovm/x/gnovm/module"
-	gnovmtypes "github.com/ignite/gnovm/x/gnovm/types"
+	gnovmkeeper "github.com/sparkdream/gnovm/x/gnovm/keeper"
+	gnovmmodule "github.com/sparkdream/gnovm/x/gnovm/module"
+	gnovmtypes "github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 const (

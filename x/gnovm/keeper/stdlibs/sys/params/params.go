@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 )
 
 func X_setSysParamString(m *gno.Machine, module, submodule, name, val string) {

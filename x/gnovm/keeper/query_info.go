@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

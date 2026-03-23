@@ -8,8 +8,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/ignite/gnovm/x/gnovm/keeper"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 func SimulateMsgCall(

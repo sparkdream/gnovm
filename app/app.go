@@ -28,11 +28,11 @@ import (
 	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	"github.com/ignite/gnovm/docs"
+	"github.com/sparkdream/gnovm/docs"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	gnovmante "github.com/ignite/gnovm/x/gnovm/ante"
-	gnovmmodulekeeper "github.com/ignite/gnovm/x/gnovm/keeper"
+	gnovmante "github.com/sparkdream/gnovm/x/gnovm/ante"
+	gnovmmodulekeeper "github.com/sparkdream/gnovm/x/gnovm/keeper"
 )
 
 const (

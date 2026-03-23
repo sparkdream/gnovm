@@ -7,8 +7,8 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
-	gnovmsimulation "github.com/ignite/gnovm/x/gnovm/simulation"
-	"github.com/ignite/gnovm/x/gnovm/types"
+	gnovmsimulation "github.com/sparkdream/gnovm/x/gnovm/simulation"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 // GenerateGenesisState creates a randomized GenState of the module.

@@ -17,7 +17,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/spf13/cobra"
 
-	"github.com/ignite/gnovm/app"
+	"github.com/sparkdream/gnovm/app"
 )
 
 // NewRootCmd creates a new root command for gnovmd. It is called once in the main function.

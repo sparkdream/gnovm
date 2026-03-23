@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/gnolang/gno/gno.land/pkg/sdk/vm"
 
-	"github.com/ignite/gnovm/x/gnovm/types"
+	"github.com/sparkdream/gnovm/x/gnovm/types"
 )
 
 func (k msgServer) Call(ctx context.Context, msg *types.MsgCall) (resp *types.MsgCallResponse, err error) {

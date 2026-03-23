@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	gno "github.com/gnolang/gno/gnovm/pkg/gnolang"
-	"github.com/ignite/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/internal/execctx"
 )
 
 // std.SetParam*() can only be used to set realm-local VM parameters.  All

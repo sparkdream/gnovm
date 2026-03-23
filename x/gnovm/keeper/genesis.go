@@ -5,17 +5,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
 
 	"github.com/ignite/gnovm/x/gnovm/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/gnolang/gno/gno.land/pkg/sdk/vm"
 	"github.com/gnolang/gno/tm2/pkg/sdk/params"
-
-	"golang.org/x/tools/go/packages"
 )
-
-const defaultStdLibs = "github.com/gnolang/gno/gnovm/stdlibs"
 
 // InitGenesis initializes the module's state from a provided genesis state.
 func (k *Keeper) InitGenesis(ctx context.Context, genState types.GenesisState) error {
@@ -56,16 +53,17 @@ func (k *Keeper) InitGenesis(ctx context.Context, genState types.GenesisState) e
 		},
 	)
 
-	pkg, err := packages.Load(&packages.Config{Mode: packages.LoadFiles}, defaultStdLibs)
+	// Extract embedded stdlib files to a temp directory and load them.
+	// This replaces the previous packages.Load() call which required
+	// the Go toolchain to be installed at runtime.
+	stdlibDir, err := extractEmbeddedStdlibs()
 	if err != nil {
 		return fmt.Errorf("failed to load gno stdlib packages: %w", err)
 	}
-	if len(pkg) == 0 {
-		return fmt.Errorf("no gno stdlib packages found")
-	}
+	defer os.RemoveAll(stdlibDir)
 
 	// Initialize the standard library
-	k.VMKeeper.LoadStdlib(gnoCtx, pkg[0].Dir)
+	k.VMKeeper.LoadStdlib(gnoCtx, stdlibDir)
 	k.VMKeeper.CommitGnoTransactionStore(gnoCtx)
 
 	return nil

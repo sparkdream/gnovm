@@ -1,4 +1,4 @@
-module github.com/ignite/gnovm
+module github.com/sparkdream/gnovm
 
 go 1.25.0
 

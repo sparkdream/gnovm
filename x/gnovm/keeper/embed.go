@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 //go:embed stdlibs
@@ -35,6 +36,12 @@ func extractEmbeddedStdlibs() (string, error) {
 
 		if d.IsDir() {
 			return os.MkdirAll(targetPath, 0o755)
+		}
+
+		// Skip test files — they import packages (fmt, testing) that
+		// may not be loaded yet and are not needed at runtime.
+		if strings.HasSuffix(d.Name(), "_test.gno") {
+			return nil
 		}
 
 		data, err := embeddedStdlibs.ReadFile(path)

@@ -6,7 +6,7 @@ import (
 )
 
 var Package = amino.RegisterPackage(amino.NewPackage(
-	"github.com/gnolang/gno/gnovm/stdlibs/chain",
+	"github.com/sparkdream/gnovm/x/gnovm/keeper/stdlibs/chain",
 	"tm",
 	amino.GetCallersDirname(),
 ).

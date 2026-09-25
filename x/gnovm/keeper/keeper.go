@@ -138,9 +138,21 @@ func (k *Keeper) initializeVMKeeper(sdkCtx sdk.Context) error {
 		types.NewSlogFromCosmosLogger(k.logger),
 	)
 
+	// The VM is built lazily, on the first Gno tx after this node started,
+	// and building it re-reads every stored package (stdlibs included). None
+	// of that may be charged to the tx at hand: only a node that just
+	// restarted pays it, so the same tx would report different gas on
+	// different validators, and a tx gas limit would run out inside gno's
+	// package-iteration goroutine, where the out-of-gas panic cannot be
+	// recovered and takes the node down. Initialization reads through an
+	// infinite meter; the tx's own meter is restored below.
+	initCtx := sdkCtx.WithGasMeter(storetypes.NewInfiniteGasMeter())
+	k.vmParams.SetSDKContext(initCtx)
+	defer k.vmParams.SetSDKContext(sdkCtx)
+
 	// Set the context on the multistore after creating the context
 	if lazyStore, ok := multiStore.(*gnovmMultiStore); ok {
-		lazyStore.SetContext(gnoCtx, sdkCtx)
+		lazyStore.SetContext(gnoCtx, initCtx)
 	}
 
 	// Create VMKeeper with proper initialization

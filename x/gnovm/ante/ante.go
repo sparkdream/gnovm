@@ -15,7 +15,7 @@ func NewAnteHandler() sdk.AnteDecorator {
 
 type gnoAnteHandler struct{}
 
-func (gnoAnteHandler) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate bool, next sdk.AnteHandler) (newCtx sdk.Context, err error) {
+func (gnoAnteHandler) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate bool, next sdk.AnteHandler) (sdk.Context, error) {
 	msgs := tx.GetMsgs()
 
 	gnoVMCount := 0
@@ -37,9 +37,16 @@ func (gnoAnteHandler) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate bool, next
 		return ctx, fmt.Errorf("cannot mix GnoVM messages with non-GnoVM messages in the same transaction")
 	}
 
+	// Pass ctx on unchanged unless a Gno simulation needs the infinite
+	// meter. It must never be a zero sdk.Context: baseapp treats a zero
+	// context returned by the ante chain as "keep the pre-ante one", which
+	// drops the gas meter SetUpContextDecorator installed (so message
+	// execution ran unbounded by the tx's gas limit, and gas_wanted
+	// reported the infinite meter's limit) along with every value any
+	// decorator set.
 	if gnoVMCount > 0 && simulate {
-		newCtx = ctx.WithGasMeter(storetypes.NewInfiniteGasMeter())
+		ctx = ctx.WithGasMeter(storetypes.NewInfiniteGasMeter())
 	}
 
-	return next(newCtx, tx, simulate)
+	return next(ctx, tx, simulate)
 }

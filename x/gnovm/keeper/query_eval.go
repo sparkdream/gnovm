@@ -29,7 +29,12 @@ func (q queryServer) Eval(ctx context.Context, req *types.QueryEvalRequest) (*ty
 		return nil, fmt.Errorf("failed to initialize VM: %w", err)
 	}
 
-	result, err := q.k.VMKeeper.QueryEval(gnoCtx, req.PkgPath, req.Expr)
+	var result string
+	if req.MaxGas > 0 && req.MaxGas < vmMaxGasQuery {
+		result, err = q.k.queryEvalBounded(gnoCtx, req.PkgPath, req.Expr, int64(req.MaxGas))
+	} else {
+		result, err = q.k.VMKeeper.QueryEval(gnoCtx, req.PkgPath, req.Expr)
+	}
 	if err != nil {
 		return nil, fmt.Errorf("failed to eval expression: %w", err)
 	}

@@ -4,7 +4,7 @@ package gnovm.gnovm.v1;
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/ignite/gnovm/x/gnovm/types";
+option go_package = "github.com/sparkdream/gnovm/x/gnovm/types";
 
 // Params defines the parameters for the module.
 message Params {

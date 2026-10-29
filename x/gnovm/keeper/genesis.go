@@ -53,17 +53,22 @@ func (k *Keeper) InitGenesis(ctx context.Context, genState types.GenesisState) e
 		},
 	)
 
-	// Extract embedded stdlib files to a temp directory and load them.
-	// This replaces the previous packages.Load() call which required
-	// the Go toolchain to be installed at runtime.
-	stdlibDir, err := extractEmbeddedStdlibs()
-	if err != nil {
-		return fmt.Errorf("failed to load gno stdlib packages: %w", err)
-	}
-	defer os.RemoveAll(stdlibDir)
+	// An exported genesis already carries the loaded stdlib in its store
+	// state; loading it again would append a second copy of every package
+	// to the store's package index. Only a fresh chain loads it.
+	if len(genState.State) == 0 {
+		// Extract embedded stdlib files to a temp directory and load them.
+		// This replaces the previous packages.Load() call which required
+		// the Go toolchain to be installed at runtime.
+		stdlibDir, err := extractEmbeddedStdlibs()
+		if err != nil {
+			return fmt.Errorf("failed to load gno stdlib packages: %w", err)
+		}
+		defer os.RemoveAll(stdlibDir)
 
-	// Initialize the standard library
-	k.VMKeeper.LoadStdlib(gnoCtx, stdlibDir)
+		// Initialize the standard library
+		k.VMKeeper.LoadStdlib(gnoCtx, stdlibDir)
+	}
 	k.VMKeeper.CommitGnoTransactionStore(gnoCtx)
 
 	return nil
